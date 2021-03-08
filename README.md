@@ -33,5 +33,6 @@ If `打卡成功` appears, you are free of the nettlesome clock in.
 
 ## TODO
 
-- [] try to login or clock in if failed.
-- [] use another approach to recognize instead of tesseract OCR
+- [ ] check in ahead of schedule
+- [ ] try to login or clock in if failed.
+- [ ] use another approach to recognize instead of tesseract OCR

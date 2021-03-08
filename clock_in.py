@@ -51,6 +51,9 @@ def clock_in(stu_id):
 
     form_data = data_json['data']
 
+    # TODO: add function to check in ahead of schedule
+    #form_data['fieldSQSJ'] = 1615564224
+
     form = {
         'actionId': '1',
         'formData': json.dumps(form_data),
