@@ -2,6 +2,8 @@
 
 Note: **Early version**
 
+AND you must save a **template** in `广州大学健康信息系统`!!
+
 ## How to use
 
 If this is your **very first time** to use the tool, please install dependencies with following command:
@@ -31,4 +33,5 @@ If `打卡成功` appears, you are free of the nettlesome clock in.
 
 ## TODO
 
-on the way...
+- [] try to login or clock in if failed.
+- [] use another approach to recognize instead of tesseract OCR
