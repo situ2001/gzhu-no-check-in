@@ -4,10 +4,18 @@ import msession
 import re
 import json
 import time
+from datetime import datetime
 
 session = msession.session
 
-def clock_in(stu_id):
+def helper(stu_id, days=None):
+    if days:
+        for day in range(days):
+            clock_in(stu_id, day)
+    else:
+        clock_in(stu_id)
+
+def clock_in(stu_id, days=None):
     load_from_cookies(stu_id)
 
     res = session.get('http://yqtb.gzhu.edu.cn/infoplus/form/XNYQSB/start')
@@ -51,8 +59,13 @@ def clock_in(stu_id):
 
     form_data = data_json['data']
 
-    # TODO: add function to check in ahead of schedule
-    #form_data['fieldSQSJ'] = 1615564224
+    # check in ahead of schedule
+    if days:
+        form_data['fieldSQSJ'] += (days * 86400)
+
+    # convert timestamp to datetime and it will be displayed later
+    timestamp = form_data['fieldSQSJ'] + 8 * 3600
+    _datetime = datetime.utcfromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S')
 
     form = {
         'actionId': '1',
@@ -70,6 +83,6 @@ def clock_in(stu_id):
     submit = session.post('http://yqtb.gzhu.edu.cn/infoplus/interface/doAction', data=form)
 
     if '打卡成功' in submit.text:
-        print ('打卡成功: {}'.format(stu_id))
+        print ('打卡成功: {} : {}'.format(stu_id, _datetime))
     else:
-        print ('打卡失败: {}'.format(stu_id))
+        print ('打卡失败: {} : {}'.format(stu_id, _datetime))
