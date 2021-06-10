@@ -1,5 +1,4 @@
 from load_from_cookies import load_from_cookies
-from login import login
 import msession
 import re
 import json
@@ -8,16 +7,7 @@ from datetime import datetime
 
 session = msession.session
 
-'''
-def helper(stu_id, days=None):
-    if days:
-        for day in range(days):
-            clock_in(stu_id, day)
-    else:
-        clock_in(stu_id)
-'''
-
-def clock_in(stu_id, days=None):
+def clock_in(stu_id):
     load_from_cookies(stu_id)
 
     res = session.get('http://yqtb.gzhu.edu.cn/infoplus/form/XNYQSB/start')
@@ -60,12 +50,8 @@ def clock_in(stu_id, days=None):
     field = field[:-1]
 
     form_data = data_json['data']
-
-    # not working now
-    # check in ahead of schedule
-    if days:
-        form_data['fieldSQSJ'] += (days * 86400)
     
+    # add some entries to form
     form_data['fieldJKMsfwlm'] = '1'
     form_data['fieldYZNSFJCHS'] = '0'
     form_data['fieldCNS'] = True
