@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 If you are a Windows user, please install `tesseract` from this [link](https://digi.bib.uni-mannheim.de/tesseract/) and add to PATH.
 
-Or if you use linux, run command to install `tesseract`. For instance, installing this package can be done by running this command.
+Or if you use linux, just run your software package manager to install `tesseract`. For instance, installing this package can be done by running this command.
 
 ```shell
 apt install tesseract
@@ -38,6 +38,8 @@ python run.py
 If `打卡成功` appears, you are free of the nettlesome clock in.
 
 ## ~~I am from the future~~
+
+This function is **Invalidated from 2021/06/10**
 
 ~~(puns)So you can return to the past to check in. If you want to check in from 3-10(inclusive) to 3-16(inclusive), type and run this command.~~
 
