@@ -31,16 +31,16 @@ python run.py
 
 If `打卡成功` appears, you are free of the nettlesome clock in.
 
-## I am from the future
+## ~~I am from the future~~
 
-(puns)So you can return to the past to check in. If you want to check in from 3-10(inclusive) to 3-16(inclusive), type and run this command.
+~~(puns)So you can return to the past to check in. If you want to check in from 3-10(inclusive) to 3-16(inclusive), type and run this command.~~
 
 ``` shell
-python run.py -d 7
+# python run.py -d 7
 ```
 
 ## TODO
 
-- [x] check in ahead of schedule
+- [x] ~~check in ahead of schedule~~
 - [ ] try to login or clock in if failed.
 - [ ] use another approach to recognize instead of tesseract OCR

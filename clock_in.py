@@ -8,12 +8,14 @@ from datetime import datetime
 
 session = msession.session
 
+'''
 def helper(stu_id, days=None):
     if days:
         for day in range(days):
             clock_in(stu_id, day)
     else:
         clock_in(stu_id)
+'''
 
 def clock_in(stu_id, days=None):
     load_from_cookies(stu_id)
@@ -59,9 +61,14 @@ def clock_in(stu_id, days=None):
 
     form_data = data_json['data']
 
+    # not working now
     # check in ahead of schedule
     if days:
         form_data['fieldSQSJ'] += (days * 86400)
+    
+    form_data['fieldJKMsfwlm'] = '1'
+    form_data['fieldYZNSFJCHS'] = '0'
+    form_data['fieldCNS'] = True
 
     # convert timestamp to datetime and it will be displayed later
     timestamp = form_data['fieldSQSJ'] + 8 * 3600

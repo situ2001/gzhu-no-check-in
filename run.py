@@ -1,11 +1,13 @@
-import argparse
 from load_from_cookies import load_from_cookies
 from login import login
 from clock_in import clock_in, helper
 
+'''
+import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('-d', help='Future card', type=int)
 args = parser.parse_args()
+'''
 
 students = {}
 
@@ -23,8 +25,10 @@ print('开始打卡...')
 
 for id in students:
     login(id, students[id])
-    #clock_in(id)
+    clock_in(id)
+    '''
     if args.d:
         helper(id, days=args.d)
     else:
         helper(id)
+    '''
