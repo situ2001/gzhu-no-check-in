@@ -1,6 +1,6 @@
 from load_from_cookies import load_from_cookies
 from login import login
-from clock_in import clock_in, helper
+from clock_in import clock_in
 
 '''
 import argparse
