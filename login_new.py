@@ -889,7 +889,7 @@ def login_new(username: str, password: str):
     from requests.adapters import HTTPAdapter
     adapter = HTTPAdapter(max_retries=10)
     session.mount(urls.cas_new, adapter=adapter)
-    res = session.post(urls.cas_new, data=form)
+    res = session.post(urls.cas_new, data=form, timeout=30)
 
     cookies = session.cookies
     
