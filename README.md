@@ -20,6 +20,16 @@ Action会在每日7点运行，如果需要手动运行Action，可根据下图�
 
 未来计划：稳定后将支持telegram或企业微信推送打卡结果。
 
+## 如何更新
+
+如果fork下来的仓库在未来出现如图所示
+
+![](https://docs.github.com/assets/images/help/repository/fetch-upstream-drop-down.png)
+
+则表示需要更新，点击Fetch upstream并fetch and merge即可
+
+![](https://docs.github.com/assets/images/help/repository/fetch-and-merge-button.png)
+
 ---
 
 ## English Version(Outdated)
