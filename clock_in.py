@@ -1,3 +1,4 @@
+import os
 from load_from_cookies import load_from_cookies
 import msession
 import re
@@ -77,5 +78,7 @@ def clock_in(stu_id):
 
     if '打卡成功' in submit.text:
         print ('打卡成功')
+        exit(0)
     else:
         print ('打卡失败')
+        exit(1)

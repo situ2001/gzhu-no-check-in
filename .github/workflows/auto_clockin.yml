@@ -2,7 +2,7 @@ name: 'Github Action GZHU auto clock in'
 
 on:
   schedule:
-    - cron: '0 06 * * *' # 6:00AM everyday
+    - cron: '0 07 * * *' # 6:00AM everyday
   workflow_dispatch:  # manually dispatch
     inputs:
       delays:
@@ -44,4 +44,5 @@ jobs:
         env:
           STUID: ${{ secrets.STUID }}
           STUPWD: ${{ secrets.STUPWD }}
+          TZ: Asia/Shanghai
         run: python run_action.py
