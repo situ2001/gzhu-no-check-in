@@ -887,6 +887,7 @@ def login_new(usr: str, pwd: str):
     }
 
     res = session.post(urls.cas_new, data=form)
+    print (res.text)
 
     cookies = session.cookies
     

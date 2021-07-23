@@ -14,7 +14,7 @@ session.headers = {
 #URLs
 class urls:
     cas = 'https://cas.gzhu.edu.cn/cas_server/login'
-    cas_new = 'https://newcas.gzhu.edu.cn/cas/login'
+    cas_new = 'https://newcas.gzhu.edu.cn/cas/login?locale=zh_cn'
     sso = 'http://jwxt.gzhu.edu.cn/sso/lyiotlogin'
     mygzhu = 'http://my.gzhu.edu.cn/'
     captcha = 'https://cas.gzhu.edu.cn/cas_server/captcha.jsp'
