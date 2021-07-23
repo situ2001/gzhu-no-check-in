@@ -886,8 +886,6 @@ def login_new(username: str, password: str):
     res = session.post(urls.cas_new, data=form)
 
     cookies = session.cookies
-
-    print(cookies)
     
     import os
     import pickle
