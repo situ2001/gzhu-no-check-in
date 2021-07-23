@@ -16,6 +16,7 @@ class urls:
     cas = 'https://cas.gzhu.edu.cn/cas_server/login'
     cas_new = 'https://newcas.gzhu.edu.cn/cas/login?locale=zh_cn'
     sso = 'http://jwxt.gzhu.edu.cn/sso/lyiotlogin'
+    sso_new = 'http://jwxt.gzhu.edu.cn/sso/driot4login'
     mygzhu = 'http://my.gzhu.edu.cn/'
     captcha = 'https://cas.gzhu.edu.cn/cas_server/captcha.jsp'
     jwxt = 'http://jwxt.gzhu.edu.cn/jwglxt/xtgl/index_initMenu.html'

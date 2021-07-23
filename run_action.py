@@ -5,6 +5,5 @@ import os
 stu_id = str(os.environ['STUID'])
 pwd = str(os.environ['PWD'])
 
-
 login_new(stu_id, pwd)
 clock_in(stu_id)

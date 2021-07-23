@@ -868,7 +868,6 @@ def login_new(usr: str, pwd: str):
     session.cookies.clear()
 
     res = session.get(urls.cas_new, verify=False)
-    print(res.text)
     lt = re.findall(r'name="lt" value="(.*)"', res.text)
     enc_target = usr + pwd + lt[0]
     result_rsa = ctx.call('strEnc', enc_target, '1', '2', '3')
@@ -882,8 +881,9 @@ def login_new(usr: str, pwd: str):
         '_eventId': 'submit',
     }
 
+    print(form)
+
     res = session.post(urls.cas_new, data=form)
-    print (res.text)
 
     cookies = session.cookies
     
