@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: 'Checkout codes'
-          uses: actions/checkout@main
+        uses: actions/checkout@main
       
       - name: 'Set up Python'
         uses: actions/setup-python@main
@@ -25,7 +25,7 @@ jobs:
       - name: 'Install Tesseract OCR'
         run: |
           sudo apt update
-          sudo apt tesseract-ocr
+          sudo apt install tesseract-ocr
 
       - name: 'Install requirements'
         run: |
