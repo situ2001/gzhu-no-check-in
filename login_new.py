@@ -869,12 +869,12 @@ def login_new(username: str, password: str):
 
     res = session.get(urls.cas_new, verify=False)
     lt = re.findall(r'name="lt" value="(.*)"', res.text)
-    
+
     from io import StringIO
     buf = StringIO()
     buf.write(username)
     buf.write(password)
-    buf.write(lt[0])
+    #buf.write(lt[0])
     enc_target = buf.getvalue()
     
     print(lt)
