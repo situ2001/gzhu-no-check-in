@@ -1,3 +1,6 @@
+from requests import adapters
+
+
 def login_new(username: str, password: str):
     import execjs
 
@@ -883,6 +886,9 @@ def login_new(username: str, password: str):
         '_eventId': 'submit',
     }
 
+    from requests.adapters import HTTPAdapter
+    adapter = HTTPAdapter(max_retries=10)
+    session.mount(urls.cas_new, adapter=adapter)
     res = session.post(urls.cas_new, data=form)
 
     cookies = session.cookies
