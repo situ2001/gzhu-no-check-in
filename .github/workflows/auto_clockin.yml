@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: 'Checkout codes'
-          uses: actions/checkout@main
+        uses: actions/checkout@main
       
       - name: 'Set up Python'
         uses: actions/setup-python@main
