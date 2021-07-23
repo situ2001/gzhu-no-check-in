@@ -887,6 +887,11 @@ def login_new(usr: str, pwd: str):
 
     res = session.post(urls.cas_new, data=form)
 
+    if '我的信息' in res.text:
+        print('登录成功')
+    else:
+        print('登录失败')
+
     cookies = session.cookies
     
     import os
