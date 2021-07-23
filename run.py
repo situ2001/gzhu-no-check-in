@@ -1,4 +1,4 @@
-from login import login
+from login_new import login_new
 from clock_in import clock_in
 
 students = {}
@@ -16,5 +16,5 @@ print()
 print('开始打卡...')
 
 for id in students:
-    login(id, students[id])
+    login_new(id, students[id])
     clock_in(id)
