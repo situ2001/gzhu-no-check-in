@@ -865,10 +865,6 @@ def login_new(usr: str, pwd: str):
     from msession import session, urls
     import re
 
-    session.headers = {
-        'User-Agent': 'Mozilla/5.0'
-    }
-
     session.cookies.clear()
 
     res = session.get(urls.cas_new, verify=False)
