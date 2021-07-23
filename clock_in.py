@@ -76,6 +76,6 @@ def clock_in(stu_id):
     submit = session.post('http://yqtb.gzhu.edu.cn/infoplus/interface/doAction', data=form)
 
     if '打卡成功' in submit.text:
-        print ('打卡成功: {} : {}'.format(stu_id, _datetime))
+        print ('打卡成功')
     else:
-        print ('打卡失败: {} : {}'.format(stu_id, _datetime))
+        print ('打卡失败')
