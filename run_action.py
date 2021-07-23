@@ -6,4 +6,6 @@ stu_id = str(os.environ['STUID'])
 pwd = str(os.environ['STUPWD'])
 
 login_new(stu_id, pwd)
+'''
 clock_in(stu_id)
+'''
