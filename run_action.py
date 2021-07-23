@@ -3,7 +3,7 @@ from clock_in import clock_in
 import os
 
 stu_id = str(os.environ['STUID'])
-pwd = str(os.environ['STUPASSWORD'])
+pwd = str(os.environ['STUPWD'])
 
 login_new(stu_id, pwd)
 clock_in(stu_id)
