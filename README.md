@@ -1,5 +1,27 @@
 # gzhu_no_clock_in
 
+## 如何食用
+
+首先把该项目Fork一份（在网页右上角，记得顺便点个Star哦~），然后去到你fork下来的仓库里。
+
+接着，如图所示进行操作。
+
+![Set secrets](./img/set_secrets.png)
+
+Action会在每日7点运行，如果需要手动运行Action，可根据下图进行操作
+
+![Run workflow](img/run_workflow.png)
+
+如需本地运行，请参考下面的说明。
+
+未来计划：稳定后将支持telegram或企业微信推送打卡结果。
+
+---
+
+## English Version(Outdated)
+
+如下为本地使用指南，并且略有过期。
+
 Note: **Early version**
 
 AND you must save a **template** in `广州大学健康信息系统`!!
