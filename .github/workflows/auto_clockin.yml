@@ -41,4 +41,7 @@ jobs:
         run: sleep ${{ github.event.inputs.delays }}
       
       - name: 'Perform clock in'
+        env:
+          STUID: ${{ secrets.STUID }}
+          PWD: ${{ secrets.PWD }}
         run: python run_action.py
