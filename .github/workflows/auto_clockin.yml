@@ -2,7 +2,7 @@ name: 'GZHU Auto Clock In'
 
 on:
   schedule:
-    - cron: '0 07 * * *' # 6:00AM everyday
+    - cron: '0 23 * * *' # Clock in at 7:00 CST everyday.
   workflow_dispatch:  # manually dispatch
     inputs:
       delays:
