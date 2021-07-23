@@ -16,6 +16,10 @@ Action会在每日7点运行，如果需要手动运行Action，可根据下图�
 
 ![Run workflow](img/run_workflow.png)
 
+如果需要关闭自动打卡功能，请根据下图所示进行手动关闭
+
+![](./img/enable_or_disable_action.png)
+
 如需本地运行，请参考下面的说明。
 
 未来计划：稳定后将支持telegram或企业微信推送打卡结果。
