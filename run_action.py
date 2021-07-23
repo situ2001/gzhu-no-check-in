@@ -7,6 +7,4 @@ pwd = os.environ['PWD']
 
 
 login_new(stu_id, pwd)
-'''
 clock_in(stu_id)
-'''

@@ -887,14 +887,6 @@ def login_new(usr: str, pwd: str):
 
     res = session.post(urls.cas_new, data=form)
 
-    mygzhu = 'https://newmy.gzhu.edu.cn/'
-    res = session.get(mygzhu)
-    print(result_rsa)
-    if '我的信息' in res.text:
-        print('登录成功')
-    else:
-        print('登录失败')
-
     cookies = session.cookies
     
     import os
