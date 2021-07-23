@@ -43,5 +43,5 @@ jobs:
       - name: 'Perform clock in'
         env:
           STUID: ${{ secrets.STUID }}
-          PWD: ${{ secrets.STUPWD }}
+          STUPWD: ${{ secrets.STUPWD }}
         run: python run_action.py
