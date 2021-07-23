@@ -1,4 +1,4 @@
-def login_new(usr: str, pwd: str):
+def login_new(username: str, password: str):
     import execjs
 
     fn_js = ''' 
@@ -869,7 +869,14 @@ def login_new(usr: str, pwd: str):
 
     res = session.get(urls.cas_new, verify=False)
     lt = re.findall(r'name="lt" value="(.*)"', res.text)
-    enc_target = usr + pwd + lt[0]
+    
+    from io import StringIO
+    buf = StringIO()
+    buf.write(username)
+    buf.write(password)
+    buf.write(lt[0])
+    enc_target = buf.getvalue()
+    
     print(lt)
     print(enc_target)
     result_rsa = ctx.call('strEnc', enc_target, '1', '2', '3')
@@ -896,6 +903,6 @@ def login_new(usr: str, pwd: str):
     if not cookies:
         print ('No cookies!')
     else:
-        file_name = 'cookies' + os.sep + usr
+        file_name = 'cookies' + os.sep + username
         with open(file_name, mode='wb') as cookies_file:
             pickle.dump(session.cookies, cookies_file)
