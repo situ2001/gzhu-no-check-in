@@ -870,6 +870,7 @@ def login_new(usr: str, pwd: str):
     res = session.get(urls.cas_new, verify=False)
     lt = re.findall(r'name="lt" value="(.*)"', res.text)
     enc_target = usr + pwd + lt[0]
+    print(lt)
     print(enc_target)
     result_rsa = ctx.call('strEnc', enc_target, '1', '2', '3')
 
