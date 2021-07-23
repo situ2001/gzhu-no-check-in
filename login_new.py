@@ -887,6 +887,8 @@ def login_new(usr: str, pwd: str):
 
     res = session.post(urls.cas_new, data=form)
 
+    mygzhu = 'https://newmy.gzhu.edu.cn/'
+    res = session.get(mygzhu)
     if '我的信息' in res.text:
         print('登录成功')
     else:
