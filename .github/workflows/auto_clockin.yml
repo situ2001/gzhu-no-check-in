@@ -1,0 +1,40 @@
+name: 'Github Action GZHU auto clock in'
+
+on:
+  schedule:
+    - cron: '0 06 * * *' # 6:00AM everyday
+  workflow_dispatch:  # manually dispatch
+    inputs:
+      delays:
+        description: '(Optional)Delayed time'
+        required: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout codes'
+          uses: actions/checkout@main
+      
+      - name: 'Set up Python'
+        uses: actions/setup-python@main
+        with:
+          python-version: '3.x'
+      
+      - name: 'Install Tesseract OCR'
+        run: |
+          sudo apt update
+          sudo apt tesseract-ocr
+
+      - name: 'Install requirements'
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Wait ${{ github.event.inputs.delays }}
+        if: ${{ github.event.inputs.delays != '' }}
+        run: sleep ${{ github.event.inputs.delays }}
+      
+      - name: 'Perform clock in'
+        run: python run.py
