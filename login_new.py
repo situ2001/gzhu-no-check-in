@@ -874,8 +874,11 @@ def login_new(username: str, password: str):
     buf = StringIO()
     buf.write(username)
     buf.write(password)
-    #buf.write(lt[0])
+    buf.write(lt[0])
     enc_target = buf.getvalue()
+
+    print("RAW USR", username)
+    print("RAW PWD", password)
     
     print(lt)
     print(enc_target)
