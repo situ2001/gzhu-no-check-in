@@ -24,7 +24,7 @@ Action会在每日7点运行，如果需要手动运行Action，可根据下图�
 
 ## English Version(Outdated)
 
-如下为本地使用指南，并且略有过期。
+如下为本地使用指南，并且略有过期。（新版需要电脑安装Node.js）
 
 Note: **Early version**
 
