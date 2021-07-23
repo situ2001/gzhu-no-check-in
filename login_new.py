@@ -889,6 +889,7 @@ def login_new(usr: str, pwd: str):
 
     mygzhu = 'https://newmy.gzhu.edu.cn/'
     res = session.get(mygzhu)
+    print(result_rsa)
     if '我的信息' in res.text:
         print('登录成功')
     else:

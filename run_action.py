@@ -4,9 +4,9 @@ import os
 
 stu_id = os.environ['STUID']
 pwd = os.environ['PWD']
-print(type(stu_id))
-print(type(pwd))
-'''
+
+
 login_new(stu_id, pwd)
+'''
 clock_in(stu_id)
 '''
