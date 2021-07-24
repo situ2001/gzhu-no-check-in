@@ -2,11 +2,11 @@
 
 ## 写在前面
 
-本打卡脚本仅供学习交流使用，请勿过分依赖。开发者对使用或不使用本脚本造成的问题不负任何责任，不对脚本执行效果做出任何担保，原则上不提供任何形式的技术支持。
+本打卡脚本**仅供学习交流使用**，请勿过分依赖。开发者对使用或不使用本脚本造成的问题**不负任何责任**，不对脚本执行效果做出任何担保，原则上**不提供任何形式的技术支持**。
 
 ## 如何食用
 
-**首先**把该项目**Fork一份**（在网页右上角，记得顺便**点个Star**哦~），然后去到你fork下来的仓库里。
+**首先**把该项目**Fork一份**（在网页右上角，点Fork前记得顺便**点个Star**哦~），然后去到你fork下来的仓库里。
 
 接着，如图所示进行操作。
 
@@ -22,7 +22,7 @@ Action会在每日7点运行，如果需要手动运行Action，可根据下图�
 
 如需本地运行，请参考下面的说明。
 
-未来计划：稳定后将支持telegram或企业微信推送打卡结果。
+未来计划：稳定后将支持telegram或~~企业微信~~推送打卡结果。
 
 ## 如何更新
 
@@ -42,22 +42,22 @@ Action会在每日7点运行，如果需要手动运行Action，可根据下图�
 
 Note: **Early version**
 
-AND you must save a **template** in `广州大学健康信息系统`!!
+Before using this tool, you must previously submit health report **at least once** in `广州大学健康信息系统`!!
 
 ## How to use
 
-If this is your **very first time** to use the tool, please install dependencies with following command:
+If this is your **very first time** to use the tool, please install dependencies with following command in the root dir of the cloned repo:
 
 ``` shell
 pip install -r requirements.txt
 ```
 
-If you are a Windows user, please install `tesseract` from this [link](https://digi.bib.uni-mannheim.de/tesseract/) and add to PATH.
+If you use Windows, please install `tesseract` from this [link](https://digi.bib.uni-mannheim.de/tesseract/) and add to PATH. Nodejs runtime environment is also required. Just download from [here](https://nodejs.org/) and install it.
 
-Or if you use linux, just run your software package manager to install `tesseract`. For instance, installing this package can be done by running this command.
+Or if you use Ubuntu or Debian, just run your software package manager to install `tesseract` and `nodejs`. For instance, installing this package can be done by running this command.
 
 ```shell
-apt install tesseract
+apt install tesseract nodejs
 ```
 
 Then, edit `stu_id.txt`, add your student id and your password in a new line. Note that id and password are separated by a blank space.
@@ -86,9 +86,3 @@ This function is **Invalidated from 2021/06/10**
 ``` shell
 # python run.py -d 7
 ```
-
-## TODO
-
-- [x] ~~check in ahead of schedule~~
-- [ ] try to login or clock in if failed.
-- [ ] use another approach to recognize instead of tesseract OCR
