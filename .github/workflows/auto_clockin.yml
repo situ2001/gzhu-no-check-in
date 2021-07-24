@@ -40,8 +40,10 @@ jobs:
         if: ${{ github.event.inputs.delays != '' }}
         run: sleep ${{ github.event.inputs.delays }}
 
-      - name: POST before clock in
-        run: curl -X POST -d 'rsa=1145141919810DSSQ' https://newcas.gzhu.edu.cn/cas/login?locale=zh_ch
+      - name: GET and POST before clock in
+        run: |
+          curl -X GET https://newcas.gzhu.edu.cn/cas/login?locale=zh_cn
+          curl -X POST -d 'rsa=1145141919810DSSQ' https://newcas.gzhu.edu.cn/cas/login?locale=zh_ch
       
       - name: 'Perform clock in'
         env:
