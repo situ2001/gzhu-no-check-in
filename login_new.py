@@ -879,8 +879,8 @@ def login_new(username: str, password: str):
 
     form = {
         'rsa': result_rsa,
-        'ul': '10',
-        'pl': '6',
+        'ul': str(len(username)),
+        'pl': str(len(password)),
         'lt': lt[0],
         'execution': 'e1s1',
         '_eventId': 'submit',
