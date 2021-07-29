@@ -4,6 +4,8 @@
 
 本打卡脚本**仅供学习交流使用**，请勿过分依赖。开发者对使用或不使用本脚本造成的问题**不负任何责任**，不对脚本执行效果做出任何担保，原则上**不提供任何形式的技术支持**。
 
+由于众所周知的**垃圾**校园网，使用GitHub Action自动打卡有不小的几率会失败，如有收到Action执行失败的通知邮件，请及时进行手动打卡。
+
 ## 如何食用
 
 **首先**把该项目**Fork一份**（在网页右上角，点Fork前记得顺便**点个Star**哦~），然后去到你fork下来的仓库里。
@@ -38,11 +40,7 @@ Action会在每日7点运行，如果需要手动运行Action，可根据下图�
 
 ## English Version(Outdated)
 
-如下为本地使用指南，并且略有过期。（新版需要电脑安装Node.js）
-
-Note: **Early version**
-
-Before using this tool, you must previously submit health report **at least once** in `广州大学健康信息系统`!!
+Before using this tool, you must have previously submitted health report **at least once** in `广州大学健康信息系统`!!
 
 ## How to use
 
