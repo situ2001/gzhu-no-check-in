@@ -6,7 +6,7 @@
 
 由于众所周知的**垃圾**校园网，使用GitHub Action自动打卡有不小的几率会失败，如有收到Action执行失败的通知邮件，请及时进行手动打卡。
 
-Telegram推送结果功能由@Yuzi19 提供支持，**注意，即使你不使用Telegram推送功能，也请在Secrets的TOKEN一项中输入None。**
+Telegram推送结果功能由[@Yuzi19](https://github.com/Yuzi19) 提供支持，**注意，即使你不使用Telegram推送功能，也请在Secrets的TOKEN一项中输入None。**
 
 ## 如何食用
 
