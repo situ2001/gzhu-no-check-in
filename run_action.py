@@ -8,4 +8,4 @@ token = str(os.environ['TOKEN'])
 chat_id = str(os.environ['CHAT_ID'])
 
 login_new(stu_id, pwd)
-clock_in(stu_id)
+clock_in(stu_id, token, chat_id)

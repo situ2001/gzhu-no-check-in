@@ -16,7 +16,7 @@ def tele_bot(token, chat_id, success_bool):
     else:
         bot.send_message(chat_id, text="今天的远程打卡失败！请手动打卡！")
 
-def clock_in(stu_id):
+def clock_in(stu_id, token, chat_id):
     load_from_cookies(stu_id)
 
     res = session.get('http://yqtb.gzhu.edu.cn/infoplus/form/XNYQSB/start')
