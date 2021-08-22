@@ -6,6 +6,8 @@
 
 由于众所周知的**垃圾**校园网，使用GitHub Action自动打卡有不小的几率会失败，如有收到Action执行失败的通知邮件，请及时进行手动打卡。
 
+Telegram推送结果功能由@Yuzi19 提供支持，**注意，即使你不使用Telegram推送功能，也请在Secrets的TOKEN一项中输入None。**
+
 ## 如何食用
 
 **首先**把该项目**Fork一份**（在网页右上角，点Fork前记得顺便**点个Star**哦~），然后去到你fork下来的仓库里。
@@ -13,6 +15,8 @@
 接着，如图所示进行操作。
 
 ![Set secrets](./img/set_secrets.png)
+
+**注意，即使你不使用Telegram推送功能，也请在Secrets的TOKEN一项中输入None！！**
 
 Action会在每日7点运行，如果需要手动运行Action，可根据下图进行操作
 
@@ -24,7 +28,17 @@ Action会在每日7点运行，如果需要手动运行Action，可根据下图�
 
 如需本地运行，请参考下面的说明。
 
-未来计划：稳定后将支持telegram或~~企业微信~~推送打卡结果。
+### Telegram每日打卡提醒
+
+#### 申请bot
+
+在TG去BotFather处申请一个bot，记录下token【具体请谷歌】，然后填入secrets中。
+
+#### 获得自己的ID
+
+在TG去userinfobot处查看自己的ID，填入secrets中的CHAT_ID中。
+
+然后就可以获得每日打卡的提醒了！
 
 ## 如何更新
 
