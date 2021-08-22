@@ -34,11 +34,19 @@ Action会在每日7点运行，如果需要手动运行Action，可根据下图�
 
 在TG去BotFather处申请一个bot，记录下token【具体请谷歌】，然后填入secrets中。
 
+![](./img/get_bot.png)
+
 #### 获得自己的ID
 
 在TG去userinfobot处查看自己的ID，填入secrets中的CHAT_ID中。
 
+![](./img/get_id.png)
+
 然后就可以获得每日打卡的提醒了！
+
+示例：
+
+![](./img/bot_example.png)
 
 ## 如何更新
 
