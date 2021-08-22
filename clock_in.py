@@ -86,11 +86,11 @@ def clock_in(stu_id):
 
     if '打卡成功' in submit.text:
         print ('打卡成功')
-        if token:
+        if token != None:
             tele_bot(token, chat_id, 1)
         exit(0)
     else:
         print ('打卡失败')
-        if token:
+        if token != None:
             tele_bot(token, chat_id, 0)
         exit(1)
