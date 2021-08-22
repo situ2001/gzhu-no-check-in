@@ -49,5 +49,7 @@ jobs:
         env:
           STUID: ${{ secrets.STUID }}
           STUPWD: ${{ secrets.STUPWD }}
+          TOKEN: ${{ secrets.TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
           TZ: Asia/Shanghai
         run: python run_action.py

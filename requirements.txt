@@ -2,3 +2,4 @@ requests==2.25.1
 urllib3==1.26.2
 pytesseract==0.3.7
 PyExecJS==1.0.5
+python-telegram-bot==13.7
