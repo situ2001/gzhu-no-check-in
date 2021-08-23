@@ -54,9 +54,11 @@ jobs:
           TZ: Asia/Shanghai
         run: python run_action.py
         
-      - name: 'bot_sent'
+      - name: 'bot_sent_fail'
         if: ${{ failure() }}
         run: python bot_fail.py
-        else:
+        
+      - name: 'bot_sent_success'
+        if: ${{ success() }}
         run: python bot_success.py
             
