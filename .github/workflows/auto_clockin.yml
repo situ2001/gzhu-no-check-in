@@ -55,10 +55,16 @@ jobs:
         run: python run_action.py
         
       - name: 'bot_sent_fail'
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
         if: ${{ failure() }}
         run: python bot_fail.py
         
       - name: 'bot_sent_success'
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
         if: ${{ success() }}
         run: python bot_success.py
             
