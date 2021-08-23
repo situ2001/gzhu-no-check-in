@@ -13,9 +13,9 @@ def tele_bot(token, chat_id, success_bool):
     bot = telegram.Bot(token)
     today = datetime.today()
     if success_bool == 1:
-        bot.send_message(chat_id, text="str(today.month)+"月"+str(today.day)+"日的远程打卡成功！")
+        bot.send_message(chat_id, text=str(today.month)+"月"+str(today.day)+"日的远程打卡成功！")
     else:
-        bot.send_message(chat_id, text="str(today.month)+"月"+str(today.day)+"日的远程打卡失败！请手动打卡！")
+        bot.send_message(chat_id, text=str(today.month)+"月"+str(today.day)+"日的远程打卡失败！请手动打卡！")
 
 def clock_in(stu_id, token, chat_id):
     load_from_cookies(stu_id)
