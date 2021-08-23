@@ -56,7 +56,7 @@ jobs:
         
       - name: 'bot_sent'
         if: ${{ failure() }}
-            run: python bot_fail.py
+        run: python bot_fail.py
         else:
-            run: python bot_success.py
+        run: python bot_success.py
             
