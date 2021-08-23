@@ -5,17 +5,9 @@ import re
 import json
 import time
 from datetime import datetime
-import telegram
 
 session = msession.session
 
-def tele_bot(token, chat_id, success_bool):
-    bot = telegram.Bot(token)
-    today = datetime.today()
-    if success_bool == 1:
-        bot.send_message(chat_id, text=str(today.month)+"月"+str(today.day)+"日的远程打卡成功！")
-    else:
-        bot.send_message(chat_id, text=str(today.month)+"月"+str(today.day)+"日的远程打卡失败！请手动打卡！")
 
 def clock_in(stu_id, token, chat_id):
     load_from_cookies(stu_id)
@@ -87,11 +79,7 @@ def clock_in(stu_id, token, chat_id):
 
     if '打卡成功' in submit.text:
         print ('打卡成功')
-        if not token is None:
-            tele_bot(token, chat_id, 1)
         exit(0)
     else:
         print ('打卡失败')
-        if not token is None:
-            tele_bot(token, chat_id, 0)
         exit(1)
