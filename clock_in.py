@@ -54,7 +54,8 @@ def clock_in(stu_id):
     
     # add some entries to form
     form_data['fieldJKMsfwlm'] = '1'
-    form_data['fieldYZNSFJCHS'] = '0'
+    form_data['fieldYQJLsfjcqtbl'] = '2'
+    form_data['fieldCXXXsftjhb'] = '2'
     form_data['fieldCNS'] = True
 
     # convert timestamp to datetime and it will be displayed later
