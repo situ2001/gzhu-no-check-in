@@ -85,7 +85,7 @@ This function is **Invalidated from 2021/06/10**
 # python run.py -d 7
 ```
 ## Docker部署
-此方法方便部署在NAS等服务器上。
+此方法方便部署在NAS等服务器上。<br>
 Docker文件夹内存放了修改后执行程序以及Dockerfile，可以自行build，也可以使用我build好的docker image：<br>
 <a href="https://hub.docker.com/r/hanriri/gzhu-clock" target="_blank">hanriri/gzhu-clock</a><br>
 ### 安装
@@ -93,10 +93,10 @@ Docker文件夹内存放了修改后执行程序以及Dockerfile，可以自行b
 ### 配置
 进入host上你刚才设置的目录，也就是容器内的`/mnt`目录，新建一个`stu_id.txt`文本文件，写入：
 ```bash
-<学号> <密码> <地址>
-<学号> <密码> <地址>
-<学号> <密码> <地址>
+<学号> <密码>
+<学号> <密码>
+<学号> <密码>
 ```
-一行表示一个学生，注意·学号 密码 地址·之间需要有空格隔开！<br>
+一行表示一个学生，注意·学号 密码·之间需要有空格隔开！<br>
 这一步可以是命令行操作，当然NAS上可以把这个目录通过smb等方式share出去，使用GUI进行编辑。<br>
 程序在UTC时间，每天23点0分到23点50分，执行共六次打卡程序。（北京时间是UTC协调时间+8，即早上7点）<br>
