@@ -75,7 +75,7 @@ def clock_in(stu_id):
         'lang': 'zh'
     }
 
-    submit = session.post('http://yqtb.gzhu.edu.cn/infoplus/interface/doAction', data=form)
+    submit = session.post('https://yqtb.gzhu.edu.cn/infoplus/interface/doAction', data=form)
 
     if '打卡成功' in submit.text:
         print ('打卡成功')
