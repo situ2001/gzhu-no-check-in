@@ -21,11 +21,6 @@ jobs:
         uses: actions/setup-python@main
         with:
           python-version: '3.x'
-      
-      - name: 'Install Tesseract OCR'
-        run: |
-          sudo apt update
-          sudo apt install tesseract-ocr
 
       - name: 'Install requirements'
         run: |

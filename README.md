@@ -50,14 +50,6 @@ If this is your **very first time** to use the tool, please install dependencies
 pip install -r requirements.txt
 ```
 
-If you use Windows, please install `tesseract` from this [link](https://digi.bib.uni-mannheim.de/tesseract/) and add to PATH.
-
-Or if you use Ubuntu or Debian, just run your software package manager to install `tesseract`. For instance, installing this package can be done by running this command.
-
-```shell
-apt install tesseract
-```
-
 Then, edit `stu_id.txt`, add your student id and your password in a new line. Note that id and password are separated by a blank space.
 
 For example:
