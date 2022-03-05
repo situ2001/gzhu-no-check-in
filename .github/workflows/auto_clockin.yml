@@ -27,10 +27,6 @@ jobs:
           sudo apt update
           sudo apt install tesseract-ocr
 
-      - name: 'Install Node.js environment'
-        run: |        
-          sudo apt install nodejs
-
       - name: 'Install requirements'
         run: |
           python -m pip install --upgrade pip
