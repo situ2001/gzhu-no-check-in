@@ -1,3 +1,4 @@
 requests==2.25.1
 urllib3==1.26.2
 Js2Py==0.71
+pyquery==1.4.3

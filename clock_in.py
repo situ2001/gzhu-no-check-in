@@ -78,5 +78,7 @@ def clock_in(stu_id):
 
     if '打卡成功' in submit.text:
         print ('打卡成功')
+        return True
     else:
         print ('打卡失败')
+        return False

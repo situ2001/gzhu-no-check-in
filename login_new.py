@@ -1,3 +1,10 @@
+from pyquery import PyQuery as pq
+from msession import session, urls, cookies_dict
+import re
+from requests.adapters import HTTPAdapter
+import js2py
+
+
 def login_new(username: str, password: str):
     fn_js = ''' 
     /* 
@@ -857,11 +864,7 @@ function strEnc(data, firstKey, secondKey, thirdKey) {
 }  
     '''
 
-    import js2py
     strEnc = js2py.eval_js(fn_js)
-
-    from msession import session, urls, cookies_dict
-    import re
 
     session.cookies.clear()
 
@@ -881,7 +884,6 @@ function strEnc(data, firstKey, secondKey, thirdKey) {
         '_eventId': 'submit',
     }
 
-    from requests.adapters import HTTPAdapter
     adapter = HTTPAdapter(max_retries=10)
     session.mount(urls.cas_new, adapter=adapter)
     res = session.post(urls.cas_new, data=form, timeout=30)
@@ -890,3 +892,11 @@ function strEnc(data, firstKey, secondKey, thirdKey) {
 
     # add cookies to dict
     cookies_dict[username] = cookies
+
+    d = pq(res.text)
+    err_msg = d("#errormsghide").text()
+    if len(err_msg) > 0:
+        print(err_msg)
+        return False
+    else:
+        return True
