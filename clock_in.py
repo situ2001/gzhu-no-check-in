@@ -1,6 +1,5 @@
-import os
-from load_from_cookies import load_from_cookies
 import msession
+from msession import cookies_dict
 import re
 import json
 import time
@@ -9,7 +8,7 @@ from datetime import datetime
 session = msession.session
 
 def clock_in(stu_id):
-    load_from_cookies(stu_id)
+    session.cookies.update(cookies_dict[stu_id])
 
     res = session.get('https://yqtb.gzhu.edu.cn/infoplus/form/XNYQSB/start')
 

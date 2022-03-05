@@ -860,7 +860,7 @@ function strEnc(data, firstKey, secondKey, thirdKey) {
     import js2py
     strEnc = js2py.eval_js(fn_js)
 
-    from msession import session, urls
+    from msession import session, urls, cookies_dict
     import re
 
     session.cookies.clear()
@@ -888,15 +888,5 @@ function strEnc(data, firstKey, secondKey, thirdKey) {
 
     cookies = session.cookies
 
-    import os
-    import pickle
-
-    if not os.path.exists('cookies'):
-        os.mkdir('cookies')
-
-    if not cookies:
-        print('No cookies!')
-    else:
-        file_name = 'cookies' + os.sep + username
-        with open(file_name, mode='wb') as cookies_file:
-            pickle.dump(session.cookies, cookies_file)
+    # add cookies to dict
+    cookies_dict[username] = cookies
