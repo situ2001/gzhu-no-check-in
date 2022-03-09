@@ -8,6 +8,8 @@
 
 请在下面两种方法中选择其中一种
 
+如果觉得好用，记得**点个Star**哦
+
 ## 在本地食用
 
 If this is your **very first time** to use the tool, please install dependencies with following command in the root dir of the cloned repo:
