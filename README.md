@@ -47,6 +47,12 @@ Or combining them together.
 export SCT_KEY=<YOUR_SEND_KEY> python run.py
 ```
 
+You can also schedule a task with `cron`. For example, if you want to execute the task at 7:10 everyday, you can appending this line to cron file.
+
+```shell
+10 7 * * * export SCT_KEY=<YOUR_SEND_KEY> && cd /path/to/gzhu_no_clock_in && python run.py
+```
+
 ## 配合Action食用
 
 **首先**把该项目**Fork一份**（在网页右上角，点Fork前记得顺便**点个Star**哦~），然后去到你fork下来的仓库里。
