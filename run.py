@@ -1,5 +1,8 @@
+import os
 from login_new import login_new
 from clock_in import clock_in
+import requests
+from datetime import datetime
 
 
 def main():
@@ -45,10 +48,25 @@ def main():
         summary[id] = (login_status, clock_in_status)
 
     print()
-    print("总结")
+    result_str = '总结\n'
     for stu in summary:
         (l, c) = summary[stu]
-        print("学号", stu, "登录", l, "打卡", c)
+        result_str += ('学号 {} 登录 {} 打卡 {}\n'.format(stu, l, c))
+
+    print(result_str)
+
+    # if SCT_KEY is set
+    if os.getenv('SCT_KEY'):
+        key = os.getenv('SCT_KEY')
+        now = datetime.now()
+        y, m, d, h, min, sec, wd, yd, i = now.timetuple()
+        payload = {
+            'title': '{}/{}/{} 健康打卡'.format(y, m, d),
+            'desp': result_str
+        }
+        print(payload)
+        requests.get(
+            'https://sctapi.ftqq.com/{}.send'.format(key), params=payload)
 
 
 main()
