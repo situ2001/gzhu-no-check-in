@@ -48,7 +48,7 @@ def main():
         summary[id] = (login_status, clock_in_status)
 
     print()
-    result_str = '总结\n'
+    result_str = ''
     for stu in summary:
         (l, c) = summary[stu]
         result_str += ('学号 {} 登录 {} 打卡 {}\n'.format(stu, l, c))
@@ -64,7 +64,6 @@ def main():
             'title': '{}/{}/{} 健康打卡'.format(y, m, d),
             'desp': result_str
         }
-        print(payload)
         requests.get(
             'https://sctapi.ftqq.com/{}.send'.format(key), params=payload)
 
