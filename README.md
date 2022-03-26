@@ -27,12 +27,13 @@ For example:
 111111 22222222
 ```
 
-In addition, you can set env variable `SCT_KEY` with your SendKey of ServerChan push service to receive result on your WeChat
+In addition, you can set env variable `SCT_KEY` or `PPTKEY` with your SendKey of ServerChan or PushPlus push service to receive result on your WeChat
 
 For example, setting env variable on Ubuntu
 
 ```shell
 export SCT_KEY=<YOUR_SEND_KEY>
+export PPTKEY=<YOUR_PUSHPLUS_TOKEN>
 ```
 
 Run.
@@ -44,13 +45,13 @@ python run.py
 Or combining them together.
 
 ```shell
-export SCT_KEY=<YOUR_SEND_KEY> python run.py
+export SCT_KEY=<YOUR_SEND_KEY> ;export PPTKEY=<YOUR_PUSHPLUS_TOKEN>;python run.py
 ```
 
 You can also schedule a task with `cron`. For example, if you want to execute the task at 7:10 everyday, you can appending this line to cron file.
 
 ```shell
-10 7 * * * export SCT_KEY=<YOUR_SEND_KEY> && cd /path/to/gzhu_no_clock_in && python run.py
+10 7 * * * export SCT_KEY=<YOUR_SEND_KEY> && export PPTKEY=<YOUR_PUSHPLUS_TOKEN> && cd /path/to/gzhu_no_clock_in && python run.py
 ```
 
 ## 配合Action食用
