@@ -45,6 +45,7 @@ def main():
                 count += 1
         except:
             print("失败了，当前学号", id, "\n")
+            os.system('[ -x $PREFIX/libexec/termux-api ]&&termux-notification -t 打卡失败请检查网络或账号！')
         summary[id] = (login_status, clock_in_status)
 
     print()
