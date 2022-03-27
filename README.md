@@ -32,8 +32,13 @@ In addition, you can set env variable `SCT_KEY` or `PPTKEY` with your SendKey of
 For example, setting env variable on Ubuntu
 
 ```shell
-export SCT_KEY=<YOUR_SEND_KEY>
-export PPTKEY=<YOUR_PUSHPLUS_TOKEN>
+export SCT_KEY=<YOUR_SEND_KEY> 
+#if you have `SCT_KEY`
+```
+Or
+```shell
+export PPTKEY=<YOUR_PUSHPLUS_TOKEN> 
+#if you have `PPTKEY`
 ```
 
 Run.
@@ -51,8 +56,14 @@ export SCT_KEY=<YOUR_SEND_KEY> ;export PPTKEY=<YOUR_PUSHPLUS_TOKEN>;python run.p
 You can also schedule a task with `cron`. For example, if you want to execute the task at 7:10 everyday, you can appending this line to cron file.
 
 ```shell
-10 7 * * * export SCT_KEY=<YOUR_SEND_KEY> && export PPTKEY=<YOUR_PUSHPLUS_TOKEN> && cd /path/to/gzhu_no_clock_in && python run.py
+10 7 * * * export SCT_KEY=<YOUR_SEND_KEY> && cd /path/to/gzhu_no_clock_in && python run.py
 ```
+Or you have `PPTKEY`
+```shell
+10 7 * * * export PPTKEY=<YOUR_PUSHPLUS_TOKEN> && cd /path/to/gzhu_no_clock_in && python run.py
+```
+
+
 
 ## 配合Action食用
 
