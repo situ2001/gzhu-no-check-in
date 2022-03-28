@@ -12,7 +12,7 @@
 
 ## 在本地食用
 
-If this is your **very first time** to use the tool, please install dependencies with following command in the root dir of the cloned repo:
+### If this is your **very first time** to use the tool, please install dependencies with following command in the root dir of the cloned repo:
 
 ``` shell
 pip install -r requirements.txt
@@ -27,7 +27,7 @@ For example:
 111111 22222222
 ```
 
-In addition, you can set env variable `SCT_KEY` or `PPTKEY` with your SendKey of ServerChan or PushPlus push service to receive result on your WeChat
+### In addition, you can set env variable `SCT_KEY` or `PPTKEY` with your SendKey of ServerChan or PushPlus push service to receive result on your WeChat
 
 For example, setting env variable on Ubuntu
 
@@ -50,15 +50,19 @@ python run.py
 Or combining them together.
 
 ```shell
-export SCT_KEY=<YOUR_SEND_KEY> ;export PPTKEY=<YOUR_PUSHPLUS_TOKEN>;python run.py
+export SCT_KEY=<YOUR_SEND_KEY> ;python run.py
+```
+Or
+```shell
+export PPTKEY=<YOUR_PUSHPLUS_TOKEN>;python run.py
 ```
 
-You can also schedule a task with `cron`. For example, if you want to execute the task at 7:10 everyday, you can appending this line to cron file.
+### You can also schedule a task with `cron`. For example, if you want to execute the task at 7:10 everyday, you can appending this line to cron file.
 
 ```shell
 10 7 * * * export SCT_KEY=<YOUR_SEND_KEY> && cd /path/to/gzhu_no_clock_in && python run.py
 ```
-Or you have `PPTKEY`
+Or 
 ```shell
 10 7 * * * export PPTKEY=<YOUR_PUSHPLUS_TOKEN> && cd /path/to/gzhu_no_clock_in && python run.py
 ```
