@@ -45,7 +45,6 @@ def main():
                 count += 1
         except:
             print("失败了，当前学号", id, "\n")
-            os.system('[ -x $PREFIX/libexec/termux-api ]&&termux-notification -t 打卡失败请检查网络或账号！')
         summary[id] = (login_status, clock_in_status)
 
     print()
@@ -68,5 +67,18 @@ def main():
         requests.get(
             'https://sctapi.ftqq.com/{}.send'.format(key), params=payload)
 
+    # if PPTKEY is set
+    if os.getenv('PPTKEY'): 
+        token=os.getenv('PPTKEY')
+        payload = {
+            'token': token ,
+            'title': '健康' + result_str ,
+            'content': result_str ,
+            'template': 'html'
+        }
+        requests.get('http://www.pushplus.plus/send' , params=payload)
+    
+    # if you have termux-api
+    os.system('[ -x $PREFIX/libexec/termux-api ]&&termux-notification -t ' + result_str ) 
 
 main()
