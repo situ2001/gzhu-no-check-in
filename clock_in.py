@@ -4,8 +4,6 @@ import re
 import json
 import time
 from datetime import datetime
-import os
-import requests
 
 session = msession.session
 
