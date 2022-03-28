@@ -77,16 +77,10 @@ def clock_in(stu_id):
     }
 
     submit = session.post('https://yqtb.gzhu.edu.cn/infoplus/interface/doAction', data=form)
-    if os.getenv('PPTKEY'): 
-        token=os.getenv('PPTKEY')
 
     if '打卡成功' in submit.text:
         print ('打卡成功')
-        os.system('[ -x $PREFIX/libexec/termux-api ]&&termux-notification -t 打卡成功') 
-        requests.get('http://www.pushplus.plus/send?token='+token+'&title=健康打卡成功&content=健康打卡成功&template=html')
         return True
     else:
         print ('打卡失败')
-        os.system('[ -x $PREFIX/libexec/termux-api ]&&termux-notification -t 打卡失败') 
-        requests.get('http://www.pushplus.plus/send?token='+token+'&title=健康打卡失败&content=健康打卡失败&template=html')
         return False
