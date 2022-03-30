@@ -79,6 +79,7 @@ def main():
         requests.get('http://www.pushplus.plus/send' , params=payload)
     
     # if you have termux-api
-    os.system('[ -x $PREFIX/libexec/termux-api ]&&termux-notification -t "{}"'.format(result_str) ) 
+    if os.name == 'posix' :
+        os.system('[ -x $PREFIX/libexec/termux-api ]&&termux-notification -t "{}"'.format(result_str) ) 
 
 main()
