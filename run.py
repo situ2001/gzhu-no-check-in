@@ -81,5 +81,6 @@ def main():
     # if you have termux-api
     if os.name == 'posix' :
         os.system('[ -x $PREFIX/libexec/termux-api ]&&termux-notification -t "{}"'.format(result_str) ) 
+#    elseif os.name == 'nt' : 这里打算做win10toast
 
 main()
