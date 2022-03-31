@@ -27,31 +27,52 @@ For example:
 111111 22222222
 ```
 
-In addition, you can set env variable `SCT_KEY` with your SendKey of ServerChan push service to receive result on your WeChat
+### In addition, you can set env variable `SCT_KEY` or `PPTKEY` with your SendKey of ServerChan or PushPlus push service to receive result on your WeChat
 
-For example, setting env variable on Ubuntu
+For example, setting env variable on Ubuntu/Debian
 
 ```shell
-export SCT_KEY=<YOUR_SEND_KEY>
+export SCT_KEY=<YOUR_SEND_KEY> 
+#if you have `SCT_KEY`
+```
+Or
+```shell
+export PPTKEY=<YOUR_PUSHPLUS_TOKEN> 
+#if you have `PPTKEY`
 ```
 
-Run.
+And run.
 
 ``` shell
 python run.py
 ```
 
-Or combining them together.
+#### Or combining them together.
 
 ```shell
-export SCT_KEY=<YOUR_SEND_KEY> python run.py
+export SCT_KEY=<YOUR_SEND_KEY> ;python run.py
+```
+Or
+```shell
+export PPTKEY=<YOUR_PUSHPLUS_TOKEN>;python run.py
 ```
 
-You can also schedule a task with `cron`. For example, if you want to execute the task at 7:10 everyday, you can appending this line to cron file.
+### You can also schedule a task with `cron`. For example, if you want to execute the task at 7:10 everyday, you can appending this line to cron file.
 
+Just only execute :
+```shell
+10 7 * * * cd /path/to/gzhu_no_clock_in && python run.py
+```
+Or with `SCT_KEY` :
 ```shell
 10 7 * * * export SCT_KEY=<YOUR_SEND_KEY> && cd /path/to/gzhu_no_clock_in && python run.py
 ```
+Or with `PPTKET` :
+```shell
+10 7 * * * export PPTKEY=<YOUR_PUSHPLUS_TOKEN> && cd /path/to/gzhu_no_clock_in && python run.py
+```
+
+
 
 ## 配合Action食用
 

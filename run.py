@@ -67,5 +67,20 @@ def main():
         requests.get(
             'https://sctapi.ftqq.com/{}.send'.format(key), params=payload)
 
+    # if PPTKEY is set
+    if os.getenv('PPTKEY'): 
+        token=os.getenv('PPTKEY')
+        payload = {
+            'token': token ,
+            'title': '健康' + result_str ,
+            'content': result_str ,
+            'template': 'html'
+        }
+        requests.get('http://www.pushplus.plus/send' , params=payload)
+    
+    # if you have termux-api
+    if os.name == 'posix' :
+        os.system('[ -x $PREFIX/libexec/termux-api ]&&termux-notification -t "{}"'.format(result_str) ) 
+#    elseif os.name == 'nt' : 这里打算做win10toast
 
 main()
