@@ -105,7 +105,8 @@ def main():
             chat_id=chat_id.split(",")
             for id in chat_id:
                 bot.send_message(id, text=str(bj_dt.month)+"月"+str(bj_dt.day)+"日的打卡结果：\n"+result_str)
-        bot.send_message(chat_id, text=str(bj_dt.month)+"月"+str(bj_dt.day)+"日的打卡结果：\n"+result_str)
+        else:
+            bot.send_message(chat_id, text=str(bj_dt.month)+"月"+str(bj_dt.day)+"日的打卡结果：\n"+result_str)
 
 
 main()
