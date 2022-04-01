@@ -1,3 +1,4 @@
 requests==2.25.1
 urllib3==1.26.2
 pyquery==1.4.3
+python-telegram-bot==13.7
