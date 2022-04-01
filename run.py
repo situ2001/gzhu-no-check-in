@@ -3,6 +3,7 @@ from login_new import login_new
 from clock_in import clock_in
 import requests
 from datetime import datetime
+import telegram
 
 
 def main():
@@ -82,5 +83,20 @@ def main():
     if os.name == 'posix' :
         os.system('[ -x $PREFIX/libexec/termux-api ]&&termux-notification -t "{}"'.format(result_str) ) 
 #    elseif os.name == 'nt' : 这里打算做win10toast
+
+    #Telegram push by Yuzi0201
+    if os.getenv('TELETOKEN') and os.getenv('TELECHATID'):
+        token=os.getenv('TELETOKEN')
+        chat_id=os.getenv('TELECHATID')
+        bot = telegram.Bot(token)
+        utc_dt = datetime.utcnow().replace(tzinfo=timezone.utc)
+        bj_dt = utc_dt.astimezone(timezone(timedelta(hours=8)))
+        y, m, d, h, min, sec, wd, yd, i = bj_dt.timetuple()
+        if "," in chat_id:#多用户支持
+            chat_id=chat_id.partition(",")
+            for id in chat_id:
+                bot.send_message(id, text=m+"月"+d+"日的打卡结果：\n"+result_str)
+        bot.send_message(chat_id, text=m+"月"+d+"日的打卡结果：\n"+result_str)
+
 
 main()
