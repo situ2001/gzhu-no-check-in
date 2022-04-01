@@ -3,6 +3,8 @@ from login_new import login_new
 from clock_in import clock_in
 import requests
 from datetime import datetime
+from datetime import timedelta
+from datetime import timezone
 import telegram
 
 
@@ -21,7 +23,7 @@ def main():
     print('开始打卡...')
     print()
 
-    MAX_RETRY_COUNT = 2
+    MAX_RETRY_COUNT = 10
 
     summary = {}
 
@@ -42,6 +44,11 @@ def main():
             clock_in_status = clock_in(id)
             while not clock_in_status and count <= MAX_RETRY_COUNT:
                 print("打卡失败 重试中 次数:", count)
+                login_status = login_new(id, students[id])
+                while not login_status and count <= MAX_RETRY_COUNT:
+                    print("登录失败 重试中 次数:", count)
+                    login_status = login_new(id, students[id])
+                    count += 1
                 clock_in_status = clock_in(id)
                 count += 1
         except:
