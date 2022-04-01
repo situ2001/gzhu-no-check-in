@@ -56,7 +56,14 @@ Or
 ```shell
 export PPTKEY=<YOUR_PUSHPLUS_TOKEN>;python run.py
 ```
+### You can also set env variables `TELETOKEN` and `TELECHATID` with your telegram bot token and your telegram user id(for multi user,you can spilt your id with ",")
+For example, setting env variable on Ubuntu/Debian
 
+```shell
+export TELETOKEN=YOUR TOKEN
+export TELECHATID=CHATID1,CHATID2,CHATID3...
+python run.py 
+```
 ### You can also schedule a task with `cron`. For example, if you want to execute the task at 7:10 everyday, you can appending this line to cron file.
 
 Just only execute :
