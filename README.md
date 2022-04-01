@@ -4,11 +4,11 @@
 
 本打卡脚本**仅供学习交流使用**，请勿过分依赖。开发者对使用或不使用本脚本造成的问题**不负任何责任**，不对脚本执行效果做出任何担保，原则上**不提供任何形式的技术支持**。
 
-由于众所周知的**垃圾校园网**，使用**Action**自动打卡有**不小的几率会失败**，如有收到Action执行失败的通知邮件，请及时进行手动打卡。
-
 请在下面两种方法中选择其中一种
 
 如果觉得好用，记得**点个Star**哦
+
+Before using this tool, you must have previously submitted health report **at least once** in `广州大学健康信息系统`!!
 
 ## 在本地食用
 
@@ -76,6 +76,8 @@ Or with `PPTKET` :
 
 ## 配合Action食用
 
+由于众所周知的**垃圾校园网**，使用**Action**自动打卡有**不小的几率会失败**，如有收到Action执行失败的通知邮件，请及时进行手动打卡。
+
 **首先**把该项目**Fork一份**（在网页右上角，点Fork前记得顺便**点个Star**哦~），然后去到你fork下来的仓库里。
 
 接着，如图所示进行操作。
@@ -101,7 +103,3 @@ Action会在每日7点运行，如果需要手动运行Action，可根据下图�
 则表示需要更新，点击Fetch upstream并fetch and merge即可
 
 ![](https://docs.github.com/assets/images/help/repository/fetch-and-merge-button.png)
-
-## English Version(Outdated)
-
-Before using this tool, you must have previously submitted health report **at least once** in `广州大学健康信息系统`!!
