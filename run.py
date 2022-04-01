@@ -88,15 +88,17 @@ def main():
     if os.getenv('TELETOKEN') and os.getenv('TELECHATID'):
         token=os.getenv('TELETOKEN')
         chat_id=os.getenv('TELECHATID')
+        #设置代理，如服务器在境外则不需要
+        #proxy = telegram.utils.request.Request(proxy_url='http://192.168.209.1:1081')
+        #bot = telegram.Bot(token, request=proxy)
         bot = telegram.Bot(token)
         utc_dt = datetime.utcnow().replace(tzinfo=timezone.utc)
         bj_dt = utc_dt.astimezone(timezone(timedelta(hours=8)))
-        y, m, d, h, min, sec, wd, yd, i = bj_dt.timetuple()
         if "," in chat_id:#多用户支持
-            chat_id=chat_id.partition(",")
+            chat_id=chat_id.split(",")
             for id in chat_id:
-                bot.send_message(id, text=m+"月"+d+"日的打卡结果：\n"+result_str)
-        bot.send_message(chat_id, text=m+"月"+d+"日的打卡结果：\n"+result_str)
+                bot.send_message(id, text=str(bj_dt.month)+"月"+str(bj_dt.day)+"日的打卡结果：\n"+result_str)
+        bot.send_message(chat_id, text=str(bj_dt.month)+"月"+str(bj_dt.day)+"日的打卡结果：\n"+result_str)
 
 
 main()
