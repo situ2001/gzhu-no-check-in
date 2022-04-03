@@ -98,7 +98,8 @@ def main():
         token = os.getenv('TELETOKEN')
         chat_id = os.getenv('TELECHATID')
         # 设置代理，如服务器在境外则不需要
-        #proxy = telegram.utils.request.Request(proxy_url='http://192.168.209.1:1081')
+        # proxy_http=os.getenv('TG_HTTP_PROXY')
+        #proxy = telegram.utils.request.Request(proxy_url=proxy_http)
         #bot = telegram.Bot(token, request=proxy)
         bot = telegram.Bot(token)
         utc_dt = datetime.utcnow().replace(tzinfo=timezone.utc)
