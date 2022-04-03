@@ -6,7 +6,7 @@
 
 请在下面两种方法中选择其中一种
 
-如果觉得好用，记得**点个Star**哦
+如果觉得好用，记得**点个 Star**哦
 
 Before using this tool, you must have previously submitted health report **at least once** in `广州大学健康信息系统`!!
 
@@ -14,7 +14,7 @@ Before using this tool, you must have previously submitted health report **at le
 
 If this is your **very first time** to use the tool, please install dependencies with following command in the root dir of the cloned repo:
 
-``` shell
+```shell
 pip install -r requirements.txt
 ```
 
@@ -22,7 +22,7 @@ Then, edit `stu_id.txt`, add your student id and your password in a new line. No
 
 For example:
 
-``` text
+```text
 114514 19190810
 111111 22222222
 ```
@@ -32,18 +32,20 @@ For example:
 For example, setting env variable on Ubuntu/Debian
 
 ```shell
-export SCT_KEY=<YOUR_SEND_KEY> 
+export SCT_KEY=<YOUR_SEND_KEY>
 #if you have `SCT_KEY`
 ```
+
 Or
+
 ```shell
-export PPTKEY=<YOUR_PUSHPLUS_TOKEN> 
+export PPTKEY=<YOUR_PUSHPLUS_TOKEN>
 #if you have `PPTKEY`
 ```
 
 And run.
 
-``` shell
+```shell
 python run.py
 ```
 
@@ -52,46 +54,54 @@ python run.py
 ```shell
 export SCT_KEY=<YOUR_SEND_KEY> ;python run.py
 ```
+
 Or
+
 ```shell
 export PPTKEY=<YOUR_PUSHPLUS_TOKEN>;python run.py
 ```
+
 ### You can also set env variables `TELETOKEN` and `TELECHATID` with your telegram bot token and your telegram user id(for multi user,you can spilt your id with ",")
+
 For example, setting env variable on Ubuntu/Debian
 
 ```shell
 export TELETOKEN=YOUR TOKEN
 export TELECHATID=CHATID1,CHATID2,CHATID3...
-python run.py 
+python run.py
 ```
+
 ### You can also schedule a task with `cron`. For example, if you want to execute the task at 7:10 everyday, you can appending this line to cron file.
 
 Just only execute :
+
 ```shell
 10 7 * * * cd /path/to/gzhu_no_clock_in && python run.py
 ```
+
 Or with `SCT_KEY` :
+
 ```shell
 10 7 * * * export SCT_KEY=<YOUR_SEND_KEY> && cd /path/to/gzhu_no_clock_in && python run.py
 ```
+
 Or with `PPTKET` :
+
 ```shell
 10 7 * * * export PPTKEY=<YOUR_PUSHPLUS_TOKEN> && cd /path/to/gzhu_no_clock_in && python run.py
 ```
 
+## 配合 Action 食用
 
+由于众所周知的**垃圾校园网**，使用**Action**自动打卡有**不小的几率会失败**，如有收到 Action 执行失败的通知邮件，请及时进行手动打卡。
 
-## 配合Action食用
-
-由于众所周知的**垃圾校园网**，使用**Action**自动打卡有**不小的几率会失败**，如有收到Action执行失败的通知邮件，请及时进行手动打卡。
-
-**首先**把该项目**Fork一份**（在网页右上角，点Fork前记得顺便**点个Star**哦~），然后去到你fork下来的仓库里。
+**首先**把该项目**Fork 一份**（在网页右上角，点 Fork 前记得顺便**点个 Star**哦~），然后去到你 fork 下来的仓库里。
 
 接着，如图所示进行操作。
 
 ![Set secrets](./img/set_secrets.png)
 
-Action会在每日7点运行，如果需要手动运行Action，可根据下图进行操作
+Action 会在每日 7 点运行，如果需要手动运行 Action，可根据下图进行操作
 
 ![Run workflow](img/run_workflow.png)
 
@@ -103,10 +113,10 @@ Action会在每日7点运行，如果需要手动运行Action，可根据下图�
 
 ---
 
-如果fork下来的仓库在未来出现如图所示
+如果 fork 下来的仓库在未来出现如图所示
 
 ![](https://docs.github.com/assets/images/help/repository/fetch-upstream-drop-down.png)
 
-则表示需要更新，点击Fetch upstream并fetch and merge即可
+则表示需要更新，点击 Fetch upstream 并 fetch and merge 即可
 
 ![](https://docs.github.com/assets/images/help/repository/fetch-and-merge-button.png)
