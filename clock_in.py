@@ -10,7 +10,7 @@ session = msession.session
 def clock_in(stu_id):
     session.cookies.update(cookies_dict[stu_id])
 
-    res = session.get('https://yqtb.gzhu.edu.cn/infoplus/form/XNYQSB/start')
+    res = session.get('https://yqtb.gzhu.edu.cn/infoplus/form/XNYQSB/start', timeout=15)
 
     # get csrfToken
     csrfToken = re.findall(r'<meta itemscope="csrfToken" content="(?P<token>.*?)">', res.text)
@@ -22,7 +22,7 @@ def clock_in(stu_id):
         'csrfToken': csrfToken[0],
         'lang': 'zh'
     }
-    res_get_url = session.post('https://yqtb.gzhu.edu.cn/infoplus/interface/start', data=form_get_url)
+    res_get_url = session.post('https://yqtb.gzhu.edu.cn/infoplus/interface/start', data=form_get_url, timeout=15)
 
     # get URL with stepId from response
     url = json.loads(res_get_url.text)['entities'][0]
@@ -39,7 +39,7 @@ def clock_in(stu_id):
         'csrfToken': csrfToken[0]
     }
     session.headers.update({'referer': 'https://yqtb.gzhu.edu.cn/infoplus/form/XNYQSB/start'})
-    data = session.post(url='https://yqtb.gzhu.edu.cn/infoplus/interface/render', data=form)
+    data = session.post(url='https://yqtb.gzhu.edu.cn/infoplus/interface/render', data=form, timeout=15)
     data_json = json.loads(data.text)['entities'][0]
 
     # get boundField (dummy)
@@ -75,7 +75,7 @@ def clock_in(stu_id):
         'lang': 'zh'
     }
 
-    submit = session.post('https://yqtb.gzhu.edu.cn/infoplus/interface/doAction', data=form)
+    submit = session.post('https://yqtb.gzhu.edu.cn/infoplus/interface/doAction', data=form, timeout=15)
 
     if '打卡成功' in submit.text:
         print ('打卡成功')
