@@ -81,7 +81,7 @@ def main():
         token = os.getenv('PPTKEY')
         payload = {
             'token': token,
-            'title': '健康' + result_str,
+            'title': '健康打卡' ,
             'content': result_str,
             'template': 'html'
         }
