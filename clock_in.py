@@ -52,7 +52,7 @@ def clock_in(stu_id):
     form_data = data_json['data']
     
     # add some entries to form
-    form_data['fieldSTQKbrstzk1'] = '1'
+    form_data['fieldJBXXdrsfwc'] = '2'
     form_data['fieldJKMsfwlm'] = '1'
     form_data['fieldYQJLsfjcqtbl'] = '2'
     form_data['fieldCXXXsftjhb'] = '2'
