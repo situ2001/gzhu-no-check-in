@@ -58,10 +58,20 @@ def main():
 
     print()
     result_str = ''
+    all_status = True
+    student_num = 0
+    clocked = 0
     for stu in summary:
         (l, c) = summary[stu]
+        if c : 
+            clocked += 1
+        all_status &= l and c
         result_str += ('学号 {} 登录 {} 打卡 {}\n'.format(stu, l, c))
-
+        student_num += 1
+    if all_status:
+        status_string = "打卡成功({}/{})".format(clocked, student_num)
+    else:
+        status_string = "打卡失败({}个成功，{}个失败)".format(clocked, student_num - clocked)
     print(result_str)
 
     # if SCT_KEY is set
@@ -70,7 +80,7 @@ def main():
         now = datetime.now()
         y, m, d, h, min, sec, wd, yd, i = now.timetuple()
         payload = {
-            'title': '{}/{}/{} 健康打卡'.format(y, m, d),
+            'title': '{}/{}/{} 健康打卡:{}'.format(y, m, d, status_string),
             'desp': result_str
         }
         requests.get(
@@ -81,7 +91,7 @@ def main():
         token = os.getenv('PPTKEY')
         payload = {
             'token': token,
-            'title': '健康打卡' ,
+            'title': '健康打卡:{}'.format(status_string) ,
             'content': result_str,
             'template': 'html'
         }
