@@ -69,9 +69,9 @@ def main():
         result_str += ('学号 {} 登录 {} 打卡 {}\n'.format(stu, l, c))
         student_num += 1
     if all_status:
-        status_string = "打卡成功:{}/{}".format(clocked, student_num)
+        status_string = "打卡成功({}/{})".format(clocked, student_num)
     else:
-        status_string = "打卡失败:{}/{}".format(clocked, student_num)
+        status_string = "打卡失败({}个成功，{}个失败)".format(clocked, student_num - clocked)
     print(result_str)
 
     # if SCT_KEY is set
